@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GroceryGO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/reset.css">
+  <link rel="stylesheet" href="./assets/style.css">
+
+  <title>GroceryGO</title>
 </head>
-<header>GroceryGO</header>
-<h2>You're one stop solution for grocery price comparison</h2>
 <body>
+  <header>GroceryGO</header>
+  <h2>You're one stop solution for grocery price comparison</h2>
+  <div>
     <div>
-        <div>
-            <!-- Food/Drinks Section -->
-            <select id="groceryItems">
-                <option value="">Grocery Items</option>
-                <option value="soda">Soda</option>
-                <option value="cereal">Cereal</option>
-                <option value="frozenDrinks">Frozen Drinks</option>
-                <option value="saltySnacks">Salty Snacks</option>
-                <option value="milk">Milk</option>
-                <option value="eggs">Eggs</option>
-                <option value="peanutButter">Peanut Butter</option>
-                <option value="jelly">Jelly</option>
-                <option value="packagedMeats">Packaged Meats</option>
-                <option value="bread">Bread</option>
-            </select>
-        </div>
-        <div>
-            <!-- Cleaning Supplies Section -->
-            <select id="cleaningSupplies">
-                <option value="">Cleaning Supplies</option>
-                <option value="sponges">Sponges</option>
-                <option value="microfiberCloths">Microfiber Cloths</option>
-                <option value="allPurposeCleaner">All-purpose Cleaner</option>
-                <option value="ovenCleaner">Oven Cleaner</option>
-                <option value="stainlessSteelCleaner">Stainless Steel Cleaner</option>
-                <option value="dishwashingSoap">Dishwashing Soap</option>
-                <option value="bakingSoda">Baking Soda</option>
-                <option value="whiteVinegar">White Vinegar</option>
-            </select>
-            <div id="result"></div>
-        </div>
-        <div id="map"></div>
+      <!-- Food/Drinks Section -->
+      <select id="groceryItems">
+        <option value="">Grocery Items</option>
+        <option value="soda">Soda</option>
+        <option value="cereal">Cereal</option>
+        <option value="frozenDrinks">Frozen Drinks</option>
+        <option value="saltySnacks">Salty Snacks</option>
+        <option value="milk">Milk</option>
+        <option value="eggs">Eggs</option>
+        <option value="peanutButter">Peanut Butter</option>
+        <option value="jelly">Jelly</option>
+        <option value="packagedMeats">Packaged Meats</option>
+        <option value="bread">Bread</option>
+      </select>
     </div>
     <div>
-        <h3> Here are prices of _____ in you local area:</h3>
-        <div>
-            <!-- Google map location -->
-            <span>Enter Zipcode Here</span>
-            <span>Enter Mile range Here</span>
-        </div>
+      <!-- Cleaning Supplies Section -->
+      <select id="cleaningSupplies">
+        <option value="">Cleaning Supplies</option>
+        <option value="sponges">Sponges</option>
+        <option value="microfiberCloths">Microfiber Cloths</option>
+        <option value="allPurposeCleaner">All-purpose Cleaner</option>
+        <option value="ovenCleaner">Oven Cleaner</option>
+        <option value="stainlessSteelCleaner">Stainless Steel Cleaner</option>
+        <option value="dishwashingSoap">Dishwashing Soap</option>
+        <option value="bakingSoda">Baking Soda</option>
+        <option value="whiteVinegar">White Vinegar</option>
+      </select>
+      <div id="result"></div>
     </div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmTPGNxBk41P75-i03O0R_pMFV3x3mOtw&callback=initMap"></script>
-    <script src="./develop/script.js"></script>
+    <div class="map" id="map"></div>
+  </div>
+  <div>
+    <h3>Here are prices of _____ in your local area:</h3>
+    <div>
+      <!-- Google map location -->
+      <span>Enter Zipcode Here</span>
+      <span>Enter Mile range Here</span>
+    </div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmTPGNxBk41P75-i03O0R_pMFV3x3mOtw&callback=initMap" defer></script>
+  <script src="./develop/script.js"></script>
 </body>
 </html>
