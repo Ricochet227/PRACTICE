@@ -9,13 +9,24 @@ function initMap() {
 function applyZipCodeAndRadius() {
   const zipCode = document.getElementById('zipCode').value;
   const radius = document.getElementById('radius').value;
-  // Use the zip code and radius values to update the map
-  // For example, you can call a function to update the map markers based on the zip code and radius
   updateMapMarkers(zipCode, radius);
 }
 
 function updateMapMarkers(zipCode, radius) {
-  // Implement your logic to update the map markers based on the zip code and radius
-  // You can use the Google Maps API to perform geocoding and calculate distances
-  // Then, update the map with the new markers
+  const geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: zipCode }, function (results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      const location = results[0].geometry.location;
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: location
+      });
+      new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    } else {
+      console.error('Geocode was not successful for the following reason: ' + status);
+    }
+  });
 }
